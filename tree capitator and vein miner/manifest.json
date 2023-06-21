@@ -1,0 +1,32 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Keyyards Tree Capitator & Vein Miner Addon | Sneak Activation",
+        "description": "by §b@keyyard§r on Twitter | for v1.19+",
+        "uuid": "26ac0fd2-b645-4c1f-b229-6480ecff7bb1",
+        "version": [
+            0,
+            0,
+            6
+        ],
+        "min_engine_version": [
+            1,
+            19,
+            0
+        ]
+    },
+    "modules": [{
+        "type": "data",
+        "uuid": "196a9951-58b3-4c77-8fb4-0ef8a39ae05f",
+        "version": [
+            0,
+            0,
+            6
+        ]
+    }],
+    "metadata": {
+        "authors": [
+            "Keyyard"
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Keyyards Vein Miner (No Gravels) Addon | Sneak Activation",
+        "description": "by §b@keyyard§r on Twitter | for v1.19+",
+        "uuid": "ca37bfda-568d-4235-81ac-e865d7d877c6",
+        "version": [
+            0,
+            0,
+            6
+        ],
+        "min_engine_version": [
+            1,
+            19,
+            0
+        ]
+    },
+    "modules": [{
+        "type": "data",
+        "uuid": "d7585af6-0c71-444f-8118-2f20a9821cce",
+        "version": [
+            0,
+            0,
+            6
+        ]
+    }],
+    "metadata": {
+        "authors": [
+            "Keyyard"
+        ]
+    }
+}
