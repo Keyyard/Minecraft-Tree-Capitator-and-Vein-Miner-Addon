@@ -2,7 +2,7 @@
 
 ![Banner](https://api.mcpedl.com/storage/submissions/177522/images/tree-capitator--vein-miner-addon_2.png)
 
-This addon mod for Minecraft combines the functionalities of Tree Capitator and Vein Miner, making resource gathering more efficient and convenient.
+This addon mod for Minecraft making resource gathering more efficient and convenient. 
 
 ## Creator
 
