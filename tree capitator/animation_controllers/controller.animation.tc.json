@@ -21,7 +21,7 @@
                 },
                 "protec": {
                     "on_entry": [
-                        "/execute @e[x=~-15,y=~-15,z=~-15,dx=32,dy=255,dz=32,type=minecraft:item] ~ ~ ~ tag @s add tc:done"
+                        "/execute @e[r=6,type=minecraft:item] ~ ~ ~ tag @s add tc:done"
                     ],
                     "transitions": [
                         { "protec_back": "!query.is_sneaking < 0.0" },

@@ -2,12 +2,12 @@
     "format_version": 2,
     "header": {
         "name": "Keyyards Tree Capitator Addon | Sneak Activation",
-        "description": "by §b@keyyard§r on Twitter | for v1.19+",
+        "description": "by Keyyard on YouTube & Twitter | for v1.20+",
         "uuid": "12c12eb1-a9a7-44d6-8775-3c6bf28bb174",
         "version": [
+            1,
             0,
-            0,
-            6
+            0
         ],
         "min_engine_version": [
             1,
@@ -19,9 +19,9 @@
         "type": "data",
         "uuid": "2042428d-948a-4aa6-ac67-f8a46d83554d",
         "version": [
+            1,
             0,
-            0,
-            6
+            0
         ]
     }],
     "metadata": {
