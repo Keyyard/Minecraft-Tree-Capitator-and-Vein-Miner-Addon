@@ -39,7 +39,7 @@ To activate Vein Miner, please remember to sneak while mining ores.
 A: This addon serves a special purpose within the Minecraft community, which is why it is hosted on my GitHub repository. It is an open-source project, meaning that anyone can participate in its development. By making it accessible to the community, it encourages collaboration and the sharing of ideas, allowing for continuous improvement. Moreover, having it on GitHub facilitates the creation of customized versions that cater to individual preferences and gameplay styles.
 
 **Q: Can I use this addon in Creative Mode?**
-A: Yes, this addon works in both Creative Mode and Survival Mode.
+A: No, this addon works in Survival Mode.
 
 **Q: Are there any compatibility issues with other mods?**
 A: This addon is compatible with most other mods. However, conflicts may occur if there are overlapping functionalities. This addon currently uses player behaviour files.
