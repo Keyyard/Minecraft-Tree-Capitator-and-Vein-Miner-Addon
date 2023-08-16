@@ -1,0 +1,40 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.tc_event": {
+            "initial_state": "func",
+            "states": {
+                "func": {
+                    "on_entry": [
+                        "/function tree_capitator/activation"
+                    ],
+                    "transitions": [
+                        { "func_back": "query.is_sneaking > 0.0" },
+                        { "protec": "query.is_sneaking < 0.0" }
+                    ]
+                },
+                "func_back": {
+                    "transitions": [
+                        { "func": "query.is_sneaking > 0.0" },
+                        { "protec": "query.is_sneaking < 0.0" }
+                    ]
+                },
+                "protec": {
+                    "on_entry": [
+                        "/execute @e[x=~-15,y=~-15,z=~-15,dx=32,dy=255,dz=32,type=minecraft:item] ~ ~ ~ tag @s add tc:done"
+                    ],
+                    "transitions": [
+                        { "protec_back": "!query.is_sneaking < 0.0" },
+                        { "func": "query.is_sneaking > 0.0" }
+                    ]
+                },
+                "protec_back": {
+                    "transitions": [
+                        { "protec": "query.is_sneaking < 0.0" },
+                        { "func": "query.is_sneaking > 0.0" }
+                    ]
+                }
+            }
+        }
+    }
+}

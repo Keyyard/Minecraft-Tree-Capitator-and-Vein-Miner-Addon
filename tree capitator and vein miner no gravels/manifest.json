@@ -1,0 +1,32 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "Keyyards Tree Capitator & Vein Miner No Gravels Addon | Sneak Activation",
+        "description": "by Keyyard on YouTube & Twitter | for v1.20+",
+        "uuid": "d970f1c8-28d7-418b-a2a8-f3476341a466",
+        "version": [
+            1,
+            0,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            19,
+            0
+        ]
+    },
+    "modules": [{
+        "type": "data",
+        "uuid": "f06afca4-8a4d-4132-84e2-c698190bc0d0",
+        "version": [
+            1,
+            0,
+            0
+        ]
+    }],
+    "metadata": {
+        "authors": [
+            "Keyyard"
+        ]
+    }
+}
