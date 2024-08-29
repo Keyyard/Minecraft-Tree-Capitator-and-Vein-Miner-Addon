@@ -21,6 +21,7 @@ To activate Tree Capitator, please ensure you are sneaking while chopping down t
 - Works for nether trees, such as crimson and warped.
 - Supports large and huge trees.
 - Compatible with new tree types, like mangrove and cherry.
+- Will drain item durability when used.
 - **Note:** Tree Capitator will not work on mangrove roots to avoid damaging the biome.
 
 ## Vein Miner
@@ -31,6 +32,7 @@ To activate Vein Miner, please remember to sneak while mining ores.
 - Works for all types of ores.
 - Supports nether ores, including nether debris and gold.
 - Works on gravels in the normal version.
+- Will drain item durability when used.
 - Vein Miner is designed for use in Survival Mode only.
 
 ## FAQ (Frequently Asked Questions)
@@ -39,14 +41,14 @@ To activate Vein Miner, please remember to sneak while mining ores.
 A: This addon serves a special purpose within the Minecraft community, which is why it is hosted on my GitHub repository. It is an open-source project, meaning that anyone can participate in its development. By making it accessible to the community, it encourages collaboration and the sharing of ideas, allowing for continuous improvement. Moreover, having it on GitHub facilitates the creation of customized versions that cater to individual preferences and gameplay styles.
 
 **Q: Can I use this addon in Creative Mode?**
-A: No, this addon works in Survival Mode.
+A: Yes, it now works for Creative Mode as well. You can use it to break blocks faster and more efficiently.
 
 **Q: Are there any compatibility issues with other mods?**
 A: This addon is compatible with most other mods. However, conflicts may occur if there are overlapping functionalities. This addon currently uses player behaviour files.
 
 **Q: How do I install the Tree Capitator and Vein Miner Addon?**
 A: To install the addon, follow these steps:
-   1. Download the addon file from Keyyard's Youtube, MCPEDL, MODBAY or MC ADDONS application by Kayen Works.
+   1. Download the addon files from the GitHub repository, or MCPEDL, or any other **trusted** source.
    2. Open the file in Minecraft and that's done!
 
 **Q: Is this addon available for Bedrock Edition or Java Edition?**
@@ -54,5 +56,6 @@ A: This addon is specifically designed for Bedrock Edition.
 
 **Q: Can I modify or redistribute this addon?**
 A: Modifying or redistributing this addon without permission from the creator is not permitted. Please respect the creator's work and rights.
+But you can fork this repository and make your own version of this addon, and you can also contribute to this repository!! You will be credited for your contribution.
 
-Please use these features responsibly and enjoy a more streamlined gameplay experience.
+Please use these features responsibly and enjoy a more pleasuring gameplay experience.
