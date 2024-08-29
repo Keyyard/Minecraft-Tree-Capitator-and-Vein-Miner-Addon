@@ -12,9 +12,16 @@ This addon was created by @keyyard.
 - Twitter: [@keyyard](https://twitter.com/keyyard)
 - Youtube: [keyyard](https://youtube.com/c/keyyard)
 
+## Features
+
+![Slider Activation](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)
+- **Tree Capitator:** Tree Capitative when using axes
+- **Vein Miner:** Vein Mining when using pickaxes
+- **Both:** Both features will get activated when using the correct tools.
+
 ## Tree Capitator
 
-To activate Tree Capitator, please ensure you are sneaking while chopping down trees. This precaution is in place to prevent accidental destruction of your structures. 
+To activate Tree Capitator, please ensure you are using axes to chopping down trees.
 
 - Break the bottom block of a tree, and the entire tree will fall down.
 - Works for all types of trees, including birch, oak, jungle, etc.
@@ -26,7 +33,7 @@ To activate Tree Capitator, please ensure you are sneaking while chopping down t
 
 ## Vein Miner
 
-To activate Vein Miner, please remember to sneak while mining ores.
+To activate Vein Miner, please ensure you are using pickaxes to mining ores.
 
 - Breaking a block in an ore chain will cause the entire chain to pop out.
 - Works for all types of ores.
