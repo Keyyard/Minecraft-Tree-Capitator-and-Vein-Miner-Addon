@@ -9,13 +9,19 @@ This addon mod for Minecraft making resource gathering more efficient and conven
 
 </div>
 
-## Creator
+## Credits
 
 This addon was created by @keyyard.
 
-**Social Media:**
+### Social Media:
 - Twitter: [@keyyard](https://twitter.com/keyyard)
 - Youtube: [keyyard](https://youtube.com/c/keyyard)
+
+### Contributors:
+- Worldwidebrine: commands in version 0.0.2
+- [GlitchyTurtle](https://github.com/GlitchyTurtle): algorithms suggestion 
+- Trea [Trea Beane](https://github.com/TreaBeane): algorithms suggestion 
+
 
 ## Features
 
