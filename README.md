@@ -20,7 +20,7 @@ This addon was created by @keyyard.
 ### Contributors:
 - Worldwidebrine: commands in version 0.0.2
 - [GlitchyTurtle](https://github.com/GlitchyTurtle): algorithms suggestion 
-- Trea [Trea Beane](https://github.com/TreaBeane): algorithms suggestion 
+- [Trea Beane](https://github.com/TreaBeane): algorithms suggestion 
 
 
 ## Features
