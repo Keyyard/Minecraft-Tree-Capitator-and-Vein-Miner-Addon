@@ -42,9 +42,9 @@ To activate Tree Capitator, please ensure you are using axes to chopping down tr
 - Will drain item durability when used.
 - **Note:** Tree Capitator will not work on mangrove roots to avoid damaging the biome.
 
-![Tree Capitator](imgs/img4.png)
-
 ![Tree Capitator](imgs/img5.png)
+
+![Tree Capitator](imgs/img4.png)
 
 ## Vein Miner
 
@@ -57,7 +57,7 @@ To activate Vein Miner, please ensure you are using pickaxes to mining ores.
 - Will drain item durability when used.
 - Vein Miner is designed for use in Survival Mode only.
 
-![Vein Miner](imgs/img1.png)
+![Vein Miner](imgs/img3.png)
 
 ![Vein Miner](imgs/img2.png)
 
