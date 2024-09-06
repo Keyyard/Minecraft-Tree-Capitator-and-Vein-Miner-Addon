@@ -53,7 +53,6 @@ To activate Vein Miner, please ensure you are using pickaxes to mining ores.
 - Supports nether ores, including nether debris and gold.
 - Works on gravels in the normal version.
 - Will drain item durability when used.
-- Vein Miner is designed for use in Survival Mode only.
 
 ![Vein Miner](imgs/img3.png)
 
