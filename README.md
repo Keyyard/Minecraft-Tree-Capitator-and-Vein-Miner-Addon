@@ -24,7 +24,6 @@ This addon was created by @keyyard.
 
 ## Features
 
-![Slider Activation](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)
 - **Tree Capitator:** Tree Capitative when using axes and sneaking.
 - **Vein Miner:** Vein Mining when using pickaxes and sneaking.
 - **Both:** Both features will get activated when using the correct tools  and sneaking.
