@@ -22,7 +22,6 @@ This addon was created by @keyyard.
 - [GlitchyTurtle](https://github.com/GlitchyTurtle): algorithms suggestion.
 - [Trea Beane](https://github.com/TreaBeane): algorithms suggestion.
 
-
 ## Features
 
 ![Slider Activation](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)
@@ -85,3 +84,9 @@ A: Modifying or redistributing this addon without permission from the creator is
 But you can fork this repository and make your own version of this addon, and you can also contribute to this repository!! You will be credited for your contribution.
 
 Please use these features responsibly and enjoy a more pleasuring gameplay experience.
+
+## Download
+
+Tree Capitator and Vein Miner: https://loot-link.com/s?a659efa4
+Tree Capitator: https://loot-link.com/s?a2f39048
+Vein Miner: https://lootdest.org/s?5bc87ff4
