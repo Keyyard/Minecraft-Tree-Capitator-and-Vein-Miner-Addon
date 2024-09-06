@@ -19,16 +19,16 @@ This addon was created by @keyyard.
 
 ### Contributors:
 - Worldwidebrine: commands in version 0.0.2
-- [GlitchyTurtle](https://github.com/GlitchyTurtle): algorithms suggestion 
-- [Trea Beane](https://github.com/TreaBeane): algorithms suggestion 
+- [GlitchyTurtle](https://github.com/GlitchyTurtle): algorithms suggestion.
+- [Trea Beane](https://github.com/TreaBeane): algorithms suggestion.
 
 
 ## Features
 
 ![Slider Activation](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)
-- **Tree Capitator:** Tree Capitative when using axes
-- **Vein Miner:** Vein Mining when using pickaxes
-- **Both:** Both features will get activated when using the correct tools.
+- **Tree Capitator:** Tree Capitative when using axes and sneaking.
+- **Vein Miner:** Vein Mining when using pickaxes and sneaking.
+- **Both:** Both features will get activated when using the correct tools  and sneaking.
 
 ## Tree Capitator
 
