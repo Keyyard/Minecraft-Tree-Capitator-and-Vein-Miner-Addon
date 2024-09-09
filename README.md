@@ -27,7 +27,6 @@ This addon was created by @keyyard.
 ## Features
 
 ![Slider Activation](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)
-
 - **Tree Capitator:** Tree Capitative when using axes and sneaking.
 - **Vein Miner:** Vein Mining when using pickaxes and sneaking.
 - **Both:** Both features will get activated when using the correct tools and sneaking.
@@ -57,7 +56,6 @@ To activate Vein Miner, please ensure you are using pickaxes to mining ores.
 - Supports nether ores, including nether debris and gold.
 - Works on gravels in the normal version.
 - Will drain item durability when used.
-- Vein Miner is designed for use in Survival Mode only.
 
 ![Vein Miner](imgs/img3.png)
 
@@ -98,5 +96,7 @@ Please use these features responsibly and enjoy a more pleasuring gameplay exper
 ## Download
 
 Tree Capitator and Vein Miner: https://loot-link.com/s?a659efa4
+
 Tree Capitator: https://loot-link.com/s?a2f39048
+
 Vein Miner: https://lootdest.org/s?5bc87ff4
