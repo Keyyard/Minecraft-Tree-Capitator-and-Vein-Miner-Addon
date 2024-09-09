@@ -3,7 +3,7 @@
 
 ![Banner](https://api.mcpedl.com/storage/submissions/177522/images/tree-capitator--vein-miner-addon_2.png)
 
-This addon mod for Minecraft making resource gathering more efficient and convenient. 
+This addon mod for Minecraft making resource gathering more efficient and convenient.
 
 ![Static Badge](https://img.shields.io/badge/downloads-2.0M-blue)
 
@@ -14,10 +14,12 @@ This addon mod for Minecraft making resource gathering more efficient and conven
 This addon was created by @keyyard.
 
 ### Social Media:
+
 - Twitter: [@keyyard](https://twitter.com/keyyard)
 - Youtube: [keyyard](https://youtube.com/c/keyyard)
 
 ### Contributors:
+
 - Worldwidebrine: commands in version 0.0.2
 - [GlitchyTurtle](https://github.com/GlitchyTurtle): algorithms suggestion.
 - [Trea Beane](https://github.com/TreaBeane): algorithms suggestion.
@@ -25,9 +27,10 @@ This addon was created by @keyyard.
 ## Features
 
 ![Slider Activation](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)
+
 - **Tree Capitator:** Tree Capitative when using axes and sneaking.
 - **Vein Miner:** Vein Mining when using pickaxes and sneaking.
-- **Both:** Both features will get activated when using the correct tools  and sneaking.
+- **Both:** Both features will get activated when using the correct tools and sneaking.
 
 ## Tree Capitator
 
@@ -60,6 +63,12 @@ To activate Vein Miner, please ensure you are using pickaxes to mining ores.
 
 ![Vein Miner](imgs/img2.png)
 
+## Preview Videos
+
+[![Preview](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)](https://www.youtube.com/watch?v=_ANFmk8lA1g&t=5s)
+
+[![Preview](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)](https://www.youtube.com/watch?v=lOuRBGSs4OU)
+
 ## FAQ (Frequently Asked Questions)
 
 **Q: Why is this addon on my GitHub?**
@@ -69,12 +78,13 @@ A: This addon serves a special purpose within the Minecraft community, which is 
 A: Yes, it now works for Creative Mode as well. You can use it to break blocks faster and more efficiently.
 
 **Q: Are there any compatibility issues with other mods?**
-A: This addon is compatible with most other mods. However, conflicts may occur if there are overlapping functionalities. This addon currently uses player behaviour files.
+A: This addon is compatible with most other mods. However, conflicts may occur if there are overlapping functionalities.
 
 **Q: How do I install the Tree Capitator and Vein Miner Addon?**
 A: To install the addon, follow these steps:
-   1. Download the addon files from the GitHub repository, or MCPEDL, or any other **trusted** source.
-   2. Open the file in Minecraft and that's done!
+
+1.  Download the addon files from the GitHub repository, or MCPEDL, or any other **trusted** source.
+2.  Open the file in Minecraft and that's done!
 
 **Q: Is this addon available for Bedrock Edition or Java Edition?**
 A: This addon is specifically designed for Bedrock Edition.
