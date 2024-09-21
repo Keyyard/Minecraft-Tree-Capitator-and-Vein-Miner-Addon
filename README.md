@@ -29,6 +29,8 @@ This addon was created by @keyyard.
 ![Slider Activation](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)
 - **Tree Capitator:** Tree Capitative when using axes and sneaking.
 - **Vein Miner:** Vein Mining when using pickaxes and sneaking.
+- **Enchantment Support:** Supports enchantments like Fortunes, Unbreaking, Silk Touch.
+- **No Limit Optimized Performance:** The addon will not limit the number of blocks you can break from the chain but break them in turns so it won't lag your game as much as break all at once. The speed remain the same for most cases.
 - **Both:** Both features will get activated when using the correct tools and sneaking.
 
 ## Tree Capitator
@@ -95,8 +97,4 @@ Please use these features responsibly and enjoy a more pleasuring gameplay exper
 
 ## Download
 
-Tree Capitator and Vein Miner: https://loot-link.com/s?a659efa4
-
-Tree Capitator: https://loot-link.com/s?a2f39048
-
-Vein Miner: https://lootdest.org/s?5bc87ff4
+Tree Capitator and VeinMiner: [Download](https://loot-link.com/s?a659efa4)
