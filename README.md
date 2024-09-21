@@ -65,9 +65,7 @@ To activate Vein Miner, please ensure you are using pickaxes to mining ores.
 
 ## Preview Videos
 
-[![Preview](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)](https://www.youtube.com/watch?v=_ANFmk8lA1g&t=5s)
-
-[![Preview](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)](https://www.youtube.com/watch?v=lOuRBGSs4OU)
+[![Preview](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)](https://youtu.be/tIkb5yy6Hyw)
 
 ## FAQ (Frequently Asked Questions)
 
