@@ -26,7 +26,6 @@ This addon was created by @keyyard.
 
 ## Features
 
-![Slider Activation](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)
 - **Tree Capitator:** Tree Capitative when using axes and sneaking.
 - **Vein Miner:** Vein Mining when using pickaxes and sneaking.
 - **Enchantment Support:** Supports enchantments like Fortunes, Unbreaking, Silk Touch.
@@ -65,7 +64,7 @@ To activate Vein Miner, please ensure you are using pickaxes to mining ores.
 
 ## Preview Videos
 
-[![Preview](https://api.mcpedl.com/storage/submissions/173738/images/tree-capitator-with-vein-miner-addon_3.png)](https://youtu.be/tIkb5yy6Hyw)
+[![Preview](https://api.mcpedl.com/storage/submissions/177522/images/tree-capitator--vein-miner-addon_2.png)](https://youtu.be/tIkb5yy6Hyw)
 
 ## FAQ (Frequently Asked Questions)
 
