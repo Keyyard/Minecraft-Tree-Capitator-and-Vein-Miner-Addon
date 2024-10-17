@@ -1,7 +1,7 @@
 <div align="center">
 <h1> Minecraft Tree Capitator and Vein Miner Addon </h1>
 
-![Banner](https://api.mcpedl.com/storage/submissions/177522/images/tree-capitator--vein-miner-addon_2.png)
+![Banner](https://api.mcpedl.com/storage/submissions/26958/112/tc-vm-copy_1-520x245.png)
 
 This addon mod for Minecraft making resource gathering more efficient and convenient.
 
