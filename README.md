@@ -29,6 +29,7 @@ This addon was created by @keyyard.
 - **Tree Capitator:** Tree Capitative when using axes and sneaking.
 - **Vein Miner:** Vein Mining when using pickaxes and sneaking.
 - **Enchantment Support:** Supports enchantments like Fortunes, Unbreaking, Silk Touch.
+- **Durability Drain:** Will drain item durability when used.
 - **No Limit Optimized Performance:** The addon will not limit the number of blocks you can break from the chain but break them in turns so it won't lag your game as much as break all at once. The speed remain the same for most cases.
 - **Both:** Both features will get activated when using the correct tools and sneaking.
 
@@ -41,7 +42,6 @@ To activate Tree Capitator, please ensure you are using axes to chopping down tr
 - Works for nether trees, such as crimson and warped.
 - Supports large and huge trees.
 - Compatible with new tree types, like mangrove and cherry.
-- Will drain item durability when used.
 - **Note:** Tree Capitator will not work on mangrove roots to avoid damaging the biome.
 
 ![Tree Capitator](imgs/img5.png)
@@ -56,11 +56,21 @@ To activate Vein Miner, please ensure you are using pickaxes to mining ores.
 - Works for all types of ores.
 - Supports nether ores, including nether debris and gold.
 - Works on gravels in the normal version.
-- Will drain item durability when used.
 
 ![Vein Miner](imgs/img3.png)
 
 ![Vein Miner](imgs/img2.png)
+
+## Enchantment Support
+
+This addon supports enchantments like Fortune, Unbreaking, and Silk Touch.
+
+- **Unbreaking:** The Unbreaking enchantment will reduce the durability drain.
+- **Fortune:** The Fortune enchantment will increase the drop rate of ores.
+- **Silk Touch:** The Silk Touch enchantment will allow you to collect ores blocks instead of ores.
+
+![silk_touch](imgs/silk_touch.gif)
+![fortune](imgs/fortune.gif)
 
 ## Preview Videos
 
