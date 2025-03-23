@@ -1,0 +1,9 @@
+{
+  "resource_pack_name": "Tree Capitator and Vein Miner RP",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "keyyard_option_controller":{
+      "textures":"textures/items/option_controller.png"
+    }
+  }
+}
