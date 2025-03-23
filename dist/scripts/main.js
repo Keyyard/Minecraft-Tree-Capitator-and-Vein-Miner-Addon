@@ -249,9 +249,11 @@ var Activation = class {
       return;
     const mainhand = player.getComponent(EntityEquippableComponent.componentId).getEquipmentSlot(EquipmentSlot.Mainhand);
     const item = mainhand.getItem();
+    const splitId = item.typeId.split(":")[1].split("_")[1];
     if (!item)
       return;
-    TreeCapitator.startChopping(player, block, item, dimension);
+    if (splitId == `axe`)
+      TreeCapitator.startChopping(player, block, item, dimension);
   }
   /**
    * Activates the vein miner functionality.
@@ -264,7 +266,11 @@ var Activation = class {
     const item = mainhand.getItem();
     if (!item)
       return;
-    VeinMiner.startMining(player, block, item, dimension);
+    const splitId = item.typeId.split(":")[1].split("_")[1];
+    if (!item)
+      return;
+    if (splitId == `pickaxe`)
+      VeinMiner.startMining(player, block, item, dimension);
   }
   /**
    * Activates the both functionality.
@@ -282,6 +288,32 @@ var Activation = class {
   }
 };
 
+// scripts/option_menu.ts
+import { ModalFormData } from "@minecraft/server-ui";
+var OptionMenu = class {
+  optionMenu(player) {
+    const treeActive = player.hasTag("TreeActive");
+    const vainActive = player.hasTag("VeinActive");
+    const optionForm = new ModalFormData().title("Tree Captivator & Vain Miner Options").toggle("Tree Captivator", treeActive).toggle("Vain Miner", vainActive);
+    optionForm.show(player).then((formData) => {
+      if (formData.formValues === void 0)
+        return;
+      const [treeSelected, vainSelected] = formData.formValues.map((value) => Boolean(value));
+      this.updateTags(player, "TreeActive", "TreeInActive", treeSelected);
+      this.updateTags(player, "VeinActive", "VeinInActive", vainSelected);
+    });
+  }
+  updateTags(player, activeTag, inactiveTag, isActive) {
+    if (isActive) {
+      player.addTag(activeTag);
+      player.removeTag(inactiveTag);
+    } else {
+      player.removeTag(activeTag);
+      player.addTag(inactiveTag);
+    }
+  }
+};
+
 // scripts/utils.ts
 import { system as system3 } from "@minecraft/server";
 function onFirstJoin(player) {
@@ -289,27 +321,52 @@ function onFirstJoin(player) {
     "<Keyyard> Hey there! You have successfully applied Tree Capitator and Vein Miner addon to your world.",
     "<Keyyard> To use Tree Capitator, hold an axe and break the bottom block of a tree while sneaking.",
     "<Keyyard> To use Vein Miner, hold a pickaxe and break a block while sneaking.",
-    "<Keyyard> There will be more features coming soon! follow me on \xA7cYou\xA7fTube\xA7r Keyyard, \xA7bTwitter\xA7r @Keyyard.",
-    "<Keyyard> Join the community discord server: \xA7bhttps://discord.gg/s2VfQr69uz",
+    `<Keyyard> You can use the "Option Controller" item to activate or deactivate these features.`,
+    "<Keyyard> There will be more features coming soon!",
+    "<Keyyard> Follow us on \xA7cYou\xA7fTube\xA7r Keyyard, \xA7bTwitter\xA7r @Keyyard, \xA7cYou\xA7fTube\xA7r Beyond64",
+    "<Keyyard> Join our community discord server: \xA7bhttps://discord.gg/s2VfQr69uz , \xA7bhttps://discord.gg/cdZA3bccQk",
     "<Keyyard> Have fun playing!"
   ];
-  messages.forEach((message, index) => {
+  const hasJoined = player.hasTag("joined");
+  const messagesToSend = hasJoined ? messages.slice(-3) : messages;
+  messagesToSend.forEach((message, index) => {
     system3.runTimeout(() => {
       player.sendMessage(message);
       player.dimension.playSound("random.orb", player.location);
     }, 100 + index * 150);
   });
+  if (!hasJoined) {
+    player.addTag("joined");
+  }
 }
 
 // scripts/main.ts
+world2.afterEvents.itemUse.subscribe(({ itemStack, source }) => {
+  const Option = new OptionMenu();
+  if (itemStack.typeId == `keyyard:option_controller`) {
+    Option.optionMenu(source);
+  }
+});
 world2.beforeEvents.playerBreakBlock.subscribe(({ block, dimension, itemStack, player }) => {
   const activation = new Activation();
-  if (player.isSneaking)
-    activation.bothActivate({ block, dimension, itemStack, player });
+  if (player.isSneaking && player.getTags().includes(`TreeActive`))
+    activation.treeCapitatorActivate({ block, dimension, itemStack, player });
+  if (player.isSneaking && player.getTags().includes(`VeinActive`))
+    activation.veinMinerActivate({ block, dimension, itemStack, player });
 });
 world2.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
   if (initialSpawn)
     onFirstJoin(player);
+  const Tags = [
+    "TreeActive",
+    "VeinActive",
+    "TreeInActive",
+    "VeinInActive"
+  ];
+  if (!player.getTags().some((tag) => Tags.includes(tag))) {
+    player.addTag("TreeActive");
+    player.addTag("VeinActive");
+  }
 });
 
 //# sourceMappingURL=../debug/main.js.map

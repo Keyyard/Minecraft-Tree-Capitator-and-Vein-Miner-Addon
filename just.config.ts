@@ -33,6 +33,7 @@ const bundleTaskOptions: BundleTaskParameters = {
 const copyTaskOptions: CopyTaskParameters = {
   copyToBehaviorPacks: [`./behavior_packs/${projectName}`],
   copyToScripts: ["./dist/scripts"],
+  copyToResourcePacks: [`./resource_packs/${projectName}`],
 };
 
 const mcaddonTaskOptions: ZipTaskParameters = {
@@ -60,7 +61,8 @@ task("package", series("clean-collateral", "copyArtifacts"));
 // Local Deploy used for deploying local changes directly to output via the bundler. It does a full build and package first just in case.
 task(
   "local-deploy",
-  watchTask(["scripts/**/*.ts", "behavior_packs/**/*.{json,lang,png}"], series("clean-local", "build", "package"))
+  watchTask(["scripts/**/*.ts", "behavior_packs/**/*.{json,lang,png}","resource_packs/**/*.{json,lang,png}"], 
+    series("clean-local", "build", "package"))
 );
 
 // Mcaddon

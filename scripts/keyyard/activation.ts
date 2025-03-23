@@ -13,9 +13,9 @@ export class Activation {
       .getComponent(EntityEquippableComponent.componentId)
       .getEquipmentSlot(EquipmentSlot.Mainhand);
     const item = mainhand.getItem();
+    const splitId = item.typeId.split(":")[1].split("_")[1];
     if (!item) return;
-
-    TreeCapitator.startChopping(player, block, item, dimension);
+    if(splitId == `axe`) TreeCapitator.startChopping(player, block, item, dimension);
   }
 
   /**
@@ -30,8 +30,9 @@ export class Activation {
       .getEquipmentSlot(EquipmentSlot.Mainhand);
     const item = mainhand.getItem();
     if (!item) return;
-
-    VeinMiner.startMining(player, block, item, dimension);
+    const splitId = item.typeId.split(":")[1].split("_")[1];
+    if (!item) return;
+    if(splitId == `pickaxe`) VeinMiner.startMining(player, block, item, dimension);
   }
   /**
    * Activates the both functionality.
