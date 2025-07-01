@@ -1,18 +1,18 @@
 {
-    "format_version": "1.21.60",
-    "minecraft:item": {
-        "description": {
-            "identifier": "keyyard:option_controller",
-            "menu_category": {
-                "category": "items"
-            }
-        },
-        "components": {
-            "minecraft:max_stack_size": 1,
-            "minecraft:icon": "keyyard_option_controller",
-            "minecraft:display_name": {
-                "value": "TcVm Option Controller"
-            }
-        }
+  "format_version": "1.21.60",
+  "minecraft:item": {
+    "description": {
+      "identifier": "keyyard:option_controller",
+      "menu_category": {
+        "category": "items"
+      }
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:icon": "keyyard_option_controller",
+      "minecraft:display_name": {
+        "value": "Tree Capitator and Vein Miner Options"
+      }
     }
+  }
 }

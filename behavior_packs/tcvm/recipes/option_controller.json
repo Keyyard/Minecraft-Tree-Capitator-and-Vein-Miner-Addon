@@ -1,23 +1,18 @@
 {
-    "format_version": "1.12.0",
-    "minecraft:recipe_shapeless": {
-        "description": {
-            "identifier": "keyyard:option_controller"
-        },
-        "tags": [
-            "crafting_table"
-        ],
-        "ingredients": [
-            {
-                "item": "minecraft:cobblestone"
-            },
-            {
-                "item": "minecraft:oak_log"
-            }
-        ],
-        "result": {
-            "item": "keyyard:option_controller",
-            "count": 1
-        }
+  "format_version": "1.12.0",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "keyyard:option_controller"
+    },
+    "tags": ["crafting_table"],
+    "ingredients": [
+      {
+        "item": "minecraft:dirt"
+      }
+    ],
+    "result": {
+      "item": "keyyard:option_controller",
+      "count": 1
     }
+  }
 }

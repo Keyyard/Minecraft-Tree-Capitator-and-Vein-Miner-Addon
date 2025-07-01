@@ -288,19 +288,19 @@ var Activation = class {
   }
 };
 
-// scripts/option_menu.ts
+// scripts/optionMenu.ts
 import { ModalFormData } from "@minecraft/server-ui";
 var OptionMenu = class {
   optionMenu(player) {
     const treeActive = player.hasTag("TreeActive");
-    const vainActive = player.hasTag("VeinActive");
-    const optionForm = new ModalFormData().title("Tree Captivator & Vain Miner Options").toggle("Tree Captivator", treeActive).toggle("Vain Miner", vainActive);
+    const veinActive = player.hasTag("VeinActive");
+    const optionForm = new ModalFormData().title("Tree Captivator & Vein Miner Options").toggle("Tree Captivator", treeActive).toggle("Vein Miner", veinActive);
     optionForm.show(player).then((formData) => {
       if (formData.formValues === void 0)
         return;
-      const [treeSelected, vainSelected] = formData.formValues.map((value) => Boolean(value));
-      this.updateTags(player, "TreeActive", "TreeInActive", treeSelected);
-      this.updateTags(player, "VeinActive", "VeinInActive", vainSelected);
+      const [treeSelected, veinSelected] = formData.formValues.map((value) => Boolean(value));
+      this.updateTags(player, "TreeActive", "TreeInactive", treeSelected);
+      this.updateTags(player, "VeinActive", "VeinInactive", veinSelected);
     });
   }
   updateTags(player, activeTag, inactiveTag, isActive) {
@@ -316,28 +316,82 @@ var OptionMenu = class {
 
 // scripts/utils.ts
 import { system as system3 } from "@minecraft/server";
-function onFirstJoin(player) {
-  const messages = [
-    "<Keyyard> Hey there! You have successfully applied Tree Capitator and Vein Miner addon to your world.",
-    "<Keyyard> To use Tree Capitator, hold an axe and break the bottom block of a tree while sneaking.",
-    "<Keyyard> To use Vein Miner, hold a pickaxe and break a block while sneaking.",
-    `<Keyyard> You can use the "Option Controller" item to activate or deactivate these features.`,
-    "<Keyyard> There will be more features coming soon!",
-    "<Keyyard> Follow us on \xA7cYou\xA7fTube\xA7r Keyyard, \xA7bTwitter\xA7r @Keyyard, \xA7cYou\xA7fTube\xA7r Beyond64",
-    "<Keyyard> Join our community discord server: \xA7bhttps://discord.gg/s2VfQr69uz , \xA7bhttps://discord.gg/cdZA3bccQk",
-    "<Keyyard> Have fun playing!"
-  ];
-  const hasJoined = player.hasTag("joined");
-  const messagesToSend = hasJoined ? messages.slice(-3) : messages;
-  messagesToSend.forEach((message, index) => {
-    system3.runTimeout(() => {
-      player.sendMessage(message);
-      player.dimension.playSound("random.orb", player.location);
-    }, 100 + index * 150);
-  });
-  if (!hasJoined) {
-    player.addTag("joined");
+var MessageTemplates = class {
+  static {
+    this.FIRST_JOIN_MESSAGES = [
+      "<Keyyard> Hey there! You have successfully applied Tree Capitator and Vein Miner addon to your world.",
+      "<Keyyard> To use Tree Capitator, hold an axe and break the bottom block of a tree while sneaking.",
+      "<Keyyard> To use Vein Miner, hold a pickaxe and break a block while sneaking.",
+      `<Keyyard> You can use the "Option Controller" item to activate or deactivate these features.`,
+      "<Keyyard> There will be more features coming soon!",
+      "<Keyyard> Follow us on \xA7cYou\xA7fTube\xA7r Keyyard, \xA7bTwitter\xA7r @Keyyard, \xA7cYou\xA7fTube\xA7r Beyond64",
+      "<Keyyard> Join our community discord server: \xA7bhttps://discord.gg/s2VfQr69uz , \xA7bhttps://discord.gg/cdZA3bccQk",
+      "<Keyyard> Have fun playing!"
+    ];
   }
+  static {
+    this.RETURNING_PLAYER_MESSAGES = [
+      "<Keyyard> Follow us on \xA7cYou\xA7fTube\xA7r Keyyard, \xA7bTwitter\xA7r @Keyyard, \xA7cYou\xA7fTube\xA7r Beyond64",
+      "<Keyyard> Join our community discord server: \xA7bhttps://discord.gg/s2VfQr69uz , \xA7bhttps://discord.gg/cdZA3bccQk",
+      "<Keyyard> Have fun playing!"
+    ];
+  }
+};
+var PlayerStateManager = class {
+  static {
+    this.FIRST_JOIN_TAG = "tcvm_first_joined";
+  }
+  static isFirstTimePlayer(player) {
+    return !player.hasTag(this.FIRST_JOIN_TAG);
+  }
+  static markAsJoined(player) {
+    if (!player.hasTag(this.FIRST_JOIN_TAG)) {
+      player.addTag(this.FIRST_JOIN_TAG);
+    }
+  }
+};
+var NotificationSystem = class {
+  static {
+    this.BASE_DELAY = 100;
+  }
+  static {
+    this.MESSAGE_INTERVAL = 150;
+  }
+  static {
+    this.NOTIFICATION_SOUND = "random.orb";
+  }
+  static sendDelayedMessages(player, messages) {
+    messages.forEach((message, index) => {
+      const delay = this.BASE_DELAY + index * this.MESSAGE_INTERVAL;
+      system3.runTimeout(() => {
+        this.sendNotificationWithSound(player, message);
+      }, delay);
+    });
+  }
+  static sendNotificationWithSound(player, message) {
+    player.sendMessage(message);
+    player.dimension.playSound(this.NOTIFICATION_SOUND, player.location);
+  }
+};
+var PlayerJoinHandler = class {
+  static handlePlayerJoin(player) {
+    const isFirstTime = PlayerStateManager.isFirstTimePlayer(player);
+    if (isFirstTime) {
+      this.handleFirstTimeJoin(player);
+    } else {
+      this.handleReturningPlayerJoin(player);
+    }
+  }
+  static handleFirstTimeJoin(player) {
+    NotificationSystem.sendDelayedMessages(player, MessageTemplates.FIRST_JOIN_MESSAGES);
+    PlayerStateManager.markAsJoined(player);
+  }
+  static handleReturningPlayerJoin(player) {
+    NotificationSystem.sendDelayedMessages(player, MessageTemplates.RETURNING_PLAYER_MESSAGES);
+  }
+};
+function onFirstJoin(player) {
+  PlayerJoinHandler.handlePlayerJoin(player);
 }
 
 // scripts/main.ts
@@ -357,12 +411,7 @@ world2.beforeEvents.playerBreakBlock.subscribe(({ block, dimension, itemStack, p
 world2.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
   if (initialSpawn)
     onFirstJoin(player);
-  const Tags = [
-    "TreeActive",
-    "VeinActive",
-    "TreeInActive",
-    "VeinInActive"
-  ];
+  const Tags = ["TreeActive", "VeinActive", "TreeInactive", "VeinInactive"];
   if (!player.getTags().some((tag) => Tags.includes(tag))) {
     player.addTag("TreeActive");
     player.addTag("VeinActive");

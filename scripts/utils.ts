@@ -1,7 +1,8 @@
 import { PaletteColor, Player, system } from "@minecraft/server";
 
-export function onFirstJoin(player: Player) {
-  const messages = [
+// Message templates for different scenarios
+class MessageTemplates {
+  static readonly FIRST_JOIN_MESSAGES = [
     "<Keyyard> Hey there! You have successfully applied Tree Capitator and Vein Miner addon to your world.",
     "<Keyyard> To use Tree Capitator, hold an axe and break the bottom block of a tree while sneaking.",
     "<Keyyard> To use Vein Miner, hold a pickaxe and break a block while sneaking.",
@@ -12,18 +13,73 @@ export function onFirstJoin(player: Player) {
     "<Keyyard> Have fun playing!",
   ];
 
-  const hasJoined = player.hasTag("joined");
-  
-  const messagesToSend = hasJoined ? messages.slice(-3) : messages;
+  static readonly RETURNING_PLAYER_MESSAGES = [
+    "<Keyyard> Follow us on \xA7cYou\xA7fTube\xA7r Keyyard, \xA7bTwitter\xA7r @Keyyard, \xA7cYou\xA7fTube\xA7r Beyond64",
+    "<Keyyard> Join our community discord server: \xA7bhttps://discord.gg/s2VfQr69uz , \xA7bhttps://discord.gg/cdZA3bccQk",
+    "<Keyyard> Have fun playing!",
+  ];
+}
 
-  messagesToSend.forEach((message, index) => {
-    system.runTimeout(() => {
-      player.sendMessage(message);
-      player.dimension.playSound("random.orb", player.location);
-    }, 100 + index * 150);
-  });
+// Player state management
+class PlayerStateManager {
+  private static readonly FIRST_JOIN_TAG = "tcvm_first_joined";
 
-  if (!hasJoined) {
-    player.addTag("joined");
+  static isFirstTimePlayer(player: Player): boolean {
+    return !player.hasTag(this.FIRST_JOIN_TAG);
   }
+
+  static markAsJoined(player: Player): void {
+    if (!player.hasTag(this.FIRST_JOIN_TAG)) {
+      player.addTag(this.FIRST_JOIN_TAG);
+    }
+  }
+}
+
+// Notification system for delayed messages with sound effects
+class NotificationSystem {
+  private static readonly BASE_DELAY = 100;
+  private static readonly MESSAGE_INTERVAL = 150;
+  private static readonly NOTIFICATION_SOUND = "random.orb";
+
+  static sendDelayedMessages(player: Player, messages: string[]): void {
+    messages.forEach((message, index) => {
+      const delay = this.BASE_DELAY + index * this.MESSAGE_INTERVAL;
+
+      system.runTimeout(() => {
+        this.sendNotificationWithSound(player, message);
+      }, delay);
+    });
+  }
+
+  private static sendNotificationWithSound(player: Player, message: string): void {
+    player.sendMessage(message);
+    player.dimension.playSound(this.NOTIFICATION_SOUND, player.location);
+  }
+}
+
+// Main handler for player join events
+class PlayerJoinHandler {
+  static handlePlayerJoin(player: Player): void {
+    const isFirstTime = PlayerStateManager.isFirstTimePlayer(player);
+
+    if (isFirstTime) {
+      this.handleFirstTimeJoin(player);
+    } else {
+      this.handleReturningPlayerJoin(player);
+    }
+  }
+
+  private static handleFirstTimeJoin(player: Player): void {
+    NotificationSystem.sendDelayedMessages(player, MessageTemplates.FIRST_JOIN_MESSAGES);
+    PlayerStateManager.markAsJoined(player);
+  }
+
+  private static handleReturningPlayerJoin(player: Player): void {
+    NotificationSystem.sendDelayedMessages(player, MessageTemplates.RETURNING_PLAYER_MESSAGES);
+  }
+}
+
+// Public API - maintains backward compatibility
+export function onFirstJoin(player: Player): void {
+  PlayerJoinHandler.handlePlayerJoin(player);
 }

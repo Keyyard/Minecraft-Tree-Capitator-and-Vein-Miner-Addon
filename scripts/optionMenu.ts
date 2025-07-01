@@ -1,30 +1,25 @@
-import { world, system, Player } from "@minecraft/server";
+import { Player } from "@minecraft/server";
 import { ModalFormData } from "@minecraft/server-ui";
 
 export class OptionMenu {
   optionMenu(player: Player) {
     const treeActive = player.hasTag("TreeActive");
-    const vainActive = player.hasTag("VeinActive");
+    const veinActive = player.hasTag("VeinActive");
 
     const optionForm = new ModalFormData()
-      .title("Tree Captivator & Vain Miner Options")
+      .title("Tree Captivator & Vein Miner Options")
       .toggle("Tree Captivator", treeActive)
-      .toggle("Vain Miner", vainActive);
+      .toggle("Vein Miner", veinActive);
 
-    optionForm
-    .show(player)
-    .then((formData) => {
+    optionForm.show(player).then((formData) => {
       if (formData.formValues === undefined) return;
-  
-      const [treeSelected, vainSelected] = formData.formValues.map(value => Boolean(value));
-  
 
-      this.updateTags(player, "TreeActive", "TreeInActive", treeSelected);
-      this.updateTags(player, "VeinActive", "VeinInActive", vainSelected);
-    })
-  
+      const [treeSelected, veinSelected] = formData.formValues.map((value) => Boolean(value));
+
+      this.updateTags(player, "TreeActive", "TreeInactive", treeSelected);
+      this.updateTags(player, "VeinActive", "VeinInactive", veinSelected);
+    });
   }
-
   private updateTags(player: Player, activeTag: string, inactiveTag: string, isActive: boolean) {
     if (isActive) {
       player.addTag(activeTag);
