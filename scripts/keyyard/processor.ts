@@ -29,17 +29,17 @@ function breakBlock(block: Block, fortuneLevel: number, hasSilkTouch: boolean) {
   block.setType("minecraft:air");
 }
 
-function applyDurabilityDamage(player: Player, item: ItemStack, inventory: any, slotIndex: number) {
+function applyDurabilityDamage(player: Player, item: ItemStack, container: Container, slotIndex: number) {
   const durabilityComponent = item.getComponent(ItemDurabilityComponent.componentId) as ItemDurabilityComponent;
   if (durabilityComponent) {
     const { unbreakingLevel } = getRelevantEnchantments(item);
     if (Math.random() < 1 / (unbreakingLevel + 1)) {
       durabilityComponent.damage += 1;
       if (durabilityComponent.damage >= durabilityComponent.maxDurability) {
-        inventory.container.setItem(slotIndex, undefined);
+        container.setItem(slotIndex, undefined);
         player.playSound("random.break");
       } else {
-        inventory.container.setItem(slotIndex, item);
+        container.setItem(slotIndex, item);
       }
     }
   }

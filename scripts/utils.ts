@@ -8,14 +8,18 @@ class MessageTemplates {
     "<Keyyard> To use Vein Miner, hold a pickaxe and break a block while sneaking.",
     `<Keyyard> You can use the "Option Controller" item to activate or deactivate these features.`,
     "<Keyyard> There will be more features coming soon!",
-    "<Keyyard> Follow us on \xA7cYou\xA7fTube\xA7r Keyyard, \xA7bTwitter\xA7r @Keyyard, \xA7cYou\xA7fTube\xA7r Beyond64",
-    "<Keyyard> Join our community discord server: \xA7bhttps://discord.gg/s2VfQr69uz , \xA7bhttps://discord.gg/cdZA3bccQk",
+    "<Keyyard> Follow us on \n\xA7cYou\xA7fTube\xA7r Keyyard\n\xA7bTwitter\xA7r @Keyyard\n\xA7cYou\xA7fTube\xA7r Beyond64",
+    "<Keyyard> Join our community discord server: \n\xA7bhttps://discord.gg/s2VfQr69uz\n\xA7bhttps://discord.gg/cdZA3bccQk",
+    "<Keyyard> You can get the latest updates, report issues or suggest features on our GitHub repository: \n\xA7dhttps://github.com/Keyyard/Minecraft-Tree-Capitator-and-Vein-Miner-Addon",
+    "<Keyyard> And a star on the repository would support us alot!",
     "<Keyyard> Have fun playing!",
   ];
 
   static readonly RETURNING_PLAYER_MESSAGES = [
-    "<Keyyard> Follow us on \xA7cYou\xA7fTube\xA7r Keyyard, \xA7bTwitter\xA7r @Keyyard, \xA7cYou\xA7fTube\xA7r Beyond64",
-    "<Keyyard> Join our community discord server: \xA7bhttps://discord.gg/s2VfQr69uz , \xA7bhttps://discord.gg/cdZA3bccQk",
+    "<Keyyard> Follow us on \n\xA7cYou\xA7fTube\xA7r Keyyard\n\xA7bTwitter\xA7r @Keyyard\n\xA7cYou\xA7fTube\xA7r Beyond64",
+    "<Keyyard> Join our community discord server: \n\xA7bhttps://discord.gg/s2VfQr69uz\n\xA7bhttps://discord.gg/cdZA3bccQk",
+    "<Keyyard> You can get the latest updates, report issues or suggest features on our GitHub repository: \n\xA7dhttps://github.com/Keyyard/Minecraft-Tree-Capitator-and-Vein-Miner-Addon",
+    "<Keyyard> And a star on the repository would support us alot!",
     "<Keyyard> Have fun playing!",
   ];
 }

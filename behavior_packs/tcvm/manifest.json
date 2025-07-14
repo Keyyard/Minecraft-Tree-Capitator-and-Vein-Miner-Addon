@@ -8,7 +8,7 @@
     "description": "by @Keyyard",
     "min_engine_version": [1, 21, 0],
     "uuid": "f658ad14-5926-41bb-9f56-3b8611e9c27c",
-    "version": [6, 0, 0]
+    "version": [6, 0, 1]
   },
   "modules": [
     {
@@ -27,7 +27,7 @@
   "dependencies": [
     {
       "uuid": "2f5ffceb-e87a-491d-ad55-98b71de10ea7",
-      "version": [6, 0, 0]
+      "version": [6, 0, 1]
     },
     {
       "module_name": "@minecraft/server",
