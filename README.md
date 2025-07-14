@@ -26,12 +26,15 @@ This addon was created by @keyyard.
 
 ## Features
 
+- **Tree Capitator and Vein Miner Controller:** allows enabling and disabling TCVM.
 - **Tree Capitator:** Tree Capitative when using axes and sneaking.
 - **Vein Miner:** Vein Mining when using pickaxes and sneaking.
 - **Enchantment Support:** Supports enchantments like Fortunes, Unbreaking, Silk Touch.
 - **Durability Drain:** Will drain item durability when used.
 - **No Limit Optimized Performance:** The addon will not limit the number of blocks you can break from the chain but break them in turns so it won't lag your game as much as break all at once. The speed remain the same for most cases.
 - **Both:** Both features will get activated when using the correct tools and sneaking.
+
+![Crafting](imgs/crafting.png)
 
 ## Tree Capitator
 
