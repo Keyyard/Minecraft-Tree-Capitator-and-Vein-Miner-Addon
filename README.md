@@ -15,6 +15,8 @@ This addon was created by @keyyard.
 
 ### Social Media:
 
+- Website: [keyyard.xyz](https://keyyard.xyz)
+- Blogs: [blogs.keyyard.xyz](https://blogs.keyyard.xyz)
 - Twitter: [@keyyard](https://twitter.com/keyyard)
 - Youtube: [keyyard](https://youtube.com/c/keyyard)
 
