@@ -86,7 +86,15 @@ class BlockProcessor {
   ) {
     const durabilityComponent = item.getComponent(ItemDurabilityComponent.componentId) as ItemDurabilityComponent;
     let currentLevel = durabilityComponent.damage;
-    const processedBlocks = new Set();
+    // Track processed block locations by a coordinate key (x:y:z).
+    // Using the Block object reference directly can be unreliable across ticks,
+    // so tracking by coordinates ensures we won't revisit the same position.
+    const processedBlocks = new Set<string>();
+
+    const coordKey = (b: Block) => {
+      const p = b.location;
+      return `${p.x}:${p.y}:${p.z}`;
+    };
 
     if (isRecursive && BlockProcessor.shouldContinueProcessing(unbreakingLevel)) {
       currentLevel++;
@@ -106,9 +114,11 @@ class BlockProcessor {
       const array = [block];
 
       function filterOtherBlock(other: Block) {
-        if (other && other.isValid() && other.permutation.matches(targetPerm.type.id) && !processedBlocks.has(other)) {
+        if (!other || !other.isValid()) return;
+        const key = coordKey(other);
+        if (other.permutation.matches(targetPerm.type.id) && !processedBlocks.has(key)) {
           array.push(other);
-          processedBlocks.add(other);
+          processedBlocks.add(key);
         }
       }
 
@@ -119,6 +129,9 @@ class BlockProcessor {
           if (element) {
             const aboveBlock = element.above();
             if (aboveBlock) filterOtherBlock(aboveBlock);
+
+            const belowBlock = element.below();
+            if (belowBlock) filterOtherBlock(belowBlock);
 
             const southBlock = element.south();
             if (southBlock) filterOtherBlock(southBlock);
@@ -142,7 +155,8 @@ class BlockProcessor {
         } while (array.length > 0);
       }
 
-      processedBlocks.add(block);
+  // Mark the starting block as processed by its coordinate key
+  processedBlocks.add(coordKey(block));
       system.runJob(process());
     }
   }
