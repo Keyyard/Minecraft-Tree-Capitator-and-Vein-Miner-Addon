@@ -1,7 +1,7 @@
 <div align="center">
 <h1> Minecraft Tree Capitator and Vein Miner Addon </h1>
 
-![Banner](https://api.mcpedl.com/storage/submissions/26958/112/tc-vm-copy_1-520x245.png)
+![Banner](imgs/banner.png)
 
 This addon mod for Minecraft making resource gathering more efficient and convenient.
 
@@ -13,14 +13,14 @@ This addon mod for Minecraft making resource gathering more efficient and conven
 
 This addon was created by @keyyard.
 
-### Social Media:
+### Social Media
 
 - Website: [keyyard.xyz](https://keyyard.xyz)
 - Blogs: [blogs.keyyard.xyz](https://blogs.keyyard.xyz)
 - Twitter: [@keyyard](https://twitter.com/keyyard)
 - Youtube: [keyyard](https://youtube.com/c/keyyard)
 
-### Contributors:
+### Contributors
 
 - Worldwidebrine: commands in version 0.0.2
 - [GlitchyTurtle](https://github.com/GlitchyTurtle): algorithms suggestion.
@@ -95,8 +95,8 @@ A: This addon is compatible with most other mods. However, conflicts may occur i
 **Q: How do I install the Tree Capitator and Vein Miner Addon?**
 A: To install the addon, follow these steps:
 
-1.  Download the addon files from the GitHub repository, or MCPEDL, or any other **trusted** source.
-2.  Open the file in Minecraft and that's done!
+1. Download the addon files from the GitHub repository, or MCPEDL, or any other **trusted** source.
+2. Open the file in Minecraft and that's done!
 
 **Q: Is this addon available for Bedrock Edition or Java Edition?**
 A: This addon is specifically designed for Bedrock Edition.
