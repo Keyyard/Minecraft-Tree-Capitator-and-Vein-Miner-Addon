@@ -4,7 +4,7 @@
     "name": "Tree Capitator and Vein Miner",
     "description": "by @Keyyard",
     "uuid": "2f5ffceb-e87a-491d-ad55-98b71de10ea7",
-    "version": [6, 0, 1],
+    "version": [6, 1, 0],
     "min_engine_version": [1, 21, 0]
   },
   "modules": [
@@ -12,13 +12,13 @@
       "description": "by @Keyyard",
       "type": "resources",
       "uuid": "8e7170e7-e547-41f0-94cd-53bed5f11b6a",
-      "version": [6, 0, 1]
+      "version": [6, 1, 0]
     }
   ],
   "dependencies": [
     {
       "uuid": "f658ad14-5926-41bb-9f56-3b8611e9c27c",
-      "version": [6, 0, 1]
+      "version": [6, 1, 0]
     }
   ]
 }

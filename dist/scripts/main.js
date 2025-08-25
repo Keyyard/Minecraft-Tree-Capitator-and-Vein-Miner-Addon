@@ -106,11 +106,18 @@ var BlockProcessor = class _BlockProcessor {
     const durabilityComponent = item.getComponent(ItemDurabilityComponent.componentId);
     let currentLevel = durabilityComponent.damage;
     const processedBlocks = /* @__PURE__ */ new Set();
+    const coordKey = (b) => {
+      const p = b.location;
+      return `${p.x}:${p.y}:${p.z}`;
+    };
     if (isRecursive && _BlockProcessor.shouldContinueProcessing(unbreakingLevel)) {
       let filterOtherBlock2 = function(other) {
-        if (other && other.isValid() && other.permutation.matches(targetPerm.type.id) && !processedBlocks.has(other)) {
+        if (!other || !other.isValid())
+          return;
+        const key = coordKey(other);
+        if (other.permutation.matches(targetPerm.type.id) && !processedBlocks.has(key)) {
           array.push(other);
-          processedBlocks.add(other);
+          processedBlocks.add(key);
         }
       };
       var filterOtherBlock = filterOtherBlock2;
@@ -137,6 +144,9 @@ var BlockProcessor = class _BlockProcessor {
             const aboveBlock = element.above();
             if (aboveBlock)
               filterOtherBlock2(aboveBlock);
+            const belowBlock = element.below();
+            if (belowBlock)
+              filterOtherBlock2(belowBlock);
             const southBlock = element.south();
             if (southBlock)
               filterOtherBlock2(southBlock);
@@ -159,7 +169,7 @@ var BlockProcessor = class _BlockProcessor {
           yield;
         } while (array.length > 0);
       }
-      processedBlocks.add(block);
+      processedBlocks.add(coordKey(block));
       system.runJob(process());
     }
   }
