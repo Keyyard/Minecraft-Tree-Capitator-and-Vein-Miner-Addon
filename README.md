@@ -108,5 +108,4 @@ But you can fork this repository and make your own version of this addon, and yo
 Please use these features responsibly and enjoy a more pleasuring gameplay experience.
 
 ## Download
-
-Tree Capitator and VeinMiner: [Download](https://lootdest.org/s?145fc85e)
+Please go to **Release** tab and download mcaddon file.
