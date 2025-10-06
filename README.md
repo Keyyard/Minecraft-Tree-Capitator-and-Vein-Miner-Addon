@@ -25,6 +25,7 @@ This addon was created by @keyyard.
 - Worldwidebrine: commands in version 0.0.2
 - [GlitchyTurtle](https://github.com/GlitchyTurtle): algorithms suggestion.
 - [Trea Beane](https://github.com/TreaBeane): algorithms suggestion.
+- [Beyond64](https://github.com/OsmaanGani): controller item.
 
 ## Features
 
