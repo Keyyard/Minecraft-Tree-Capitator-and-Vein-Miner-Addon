@@ -1,5 +1,5 @@
 // scripts/main.ts
-import { world as world2 } from "@minecraft/server";
+import { world as world3 } from "@minecraft/server";
 
 // scripts/keyyard/processor.ts
 import {
@@ -325,7 +325,7 @@ var OptionMenu = class {
 };
 
 // scripts/utils.ts
-import { system as system3 } from "@minecraft/server";
+import { system as system3, world as world2 } from "@minecraft/server";
 var MessageTemplates = class {
   static {
     this.FIRST_JOIN_MESSAGES = [
@@ -353,7 +353,18 @@ var MessageTemplates = class {
 };
 var PlayerStateManager = class {
   static {
+    this.PLAYER_WELCOMED_PREFIX = "tcvm_welcomed_";
+  }
+  static {
     this.FIRST_JOIN_TAG = "tcvm_first_joined";
+  }
+  static hasBeenWelcomedThisSession(player) {
+    const propertyKey = this.PLAYER_WELCOMED_PREFIX + player.id;
+    return world2.getDynamicProperty(propertyKey) === true;
+  }
+  static markAsWelcomedThisSession(player) {
+    const propertyKey = this.PLAYER_WELCOMED_PREFIX + player.id;
+    world2.setDynamicProperty(propertyKey, true);
   }
   static isFirstTimePlayer(player) {
     return !player.hasTag(this.FIRST_JOIN_TAG);
@@ -374,12 +385,49 @@ var NotificationSystem = class {
   static {
     this.NOTIFICATION_SOUND = "random.orb";
   }
+  static {
+    this.MESSAGE_IN_PROGRESS_KEY = "tcvm_message_in_progress";
+  }
+  static {
+    this.currentMessagePlayerId = null;
+  }
+  static {
+    this.activeTimeouts = [];
+  }
+  static isMessageInProgress() {
+    return world2.getDynamicProperty(this.MESSAGE_IN_PROGRESS_KEY) === true;
+  }
+  static setMessageInProgress(inProgress) {
+    world2.setDynamicProperty(this.MESSAGE_IN_PROGRESS_KEY, inProgress);
+  }
+  static abortCurrentMessages() {
+    this.activeTimeouts.forEach((timeoutId) => {
+      system3.clearRun(timeoutId);
+    });
+    this.activeTimeouts = [];
+    this.currentMessagePlayerId = null;
+    this.setMessageInProgress(false);
+  }
   static sendDelayedMessages(player, messages) {
+    if (this.isMessageInProgress()) {
+      this.abortCurrentMessages();
+    }
+    this.setMessageInProgress(true);
+    this.currentMessagePlayerId = player.id;
+    this.activeTimeouts = [];
     messages.forEach((message, index) => {
       const delay = this.BASE_DELAY + index * this.MESSAGE_INTERVAL;
-      system3.runTimeout(() => {
-        this.sendNotificationWithSound(player, message);
+      const timeoutId = system3.runTimeout(() => {
+        if (this.currentMessagePlayerId === player.id) {
+          this.sendNotificationWithSound(player, message);
+        }
+        if (index === messages.length - 1) {
+          this.currentMessagePlayerId = null;
+          this.setMessageInProgress(false);
+          this.activeTimeouts = [];
+        }
       }, delay);
+      this.activeTimeouts.push(timeoutId);
     });
   }
   static sendNotificationWithSound(player, message) {
@@ -389,12 +437,16 @@ var NotificationSystem = class {
 };
 var PlayerJoinHandler = class {
   static handlePlayerJoin(player) {
+    if (PlayerStateManager.hasBeenWelcomedThisSession(player)) {
+      return;
+    }
     const isFirstTime = PlayerStateManager.isFirstTimePlayer(player);
     if (isFirstTime) {
       this.handleFirstTimeJoin(player);
     } else {
       this.handleReturningPlayerJoin(player);
     }
+    PlayerStateManager.markAsWelcomedThisSession(player);
   }
   static handleFirstTimeJoin(player) {
     NotificationSystem.sendDelayedMessages(player, MessageTemplates.FIRST_JOIN_MESSAGES);
@@ -409,20 +461,20 @@ function onFirstJoin(player) {
 }
 
 // scripts/main.ts
-world2.afterEvents.itemUse.subscribe(({ itemStack, source }) => {
+world3.afterEvents.itemUse.subscribe(({ itemStack, source }) => {
   const Option = new OptionMenu();
   if (itemStack.typeId == `keyyard:option_controller`) {
     Option.optionMenu(source);
   }
 });
-world2.beforeEvents.playerBreakBlock.subscribe(({ block, dimension, itemStack, player }) => {
+world3.beforeEvents.playerBreakBlock.subscribe(({ block, dimension, itemStack, player }) => {
   const activation = new Activation();
   if (player.isSneaking && player.getTags().includes(`TreeActive`))
     activation.treeCapitatorActivate({ block, dimension, itemStack, player });
   if (player.isSneaking && player.getTags().includes(`VeinActive`))
     activation.veinMinerActivate({ block, dimension, itemStack, player });
 });
-world2.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
+world3.afterEvents.playerSpawn.subscribe(({ player, initialSpawn }) => {
   if (initialSpawn)
     onFirstJoin(player);
   const Tags = ["TreeActive", "VeinActive", "TreeInactive", "VeinInactive"];
