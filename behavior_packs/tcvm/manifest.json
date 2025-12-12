@@ -37,6 +37,5 @@
       "module_name": "@minecraft/server-ui",
       "version": "1.1.0"
     }
-  ],
-  "capabilities": ["script_eval"]
+  ]
 }
